@@ -15,29 +15,30 @@
 // Pila()
 
 function Reemplazar(){
-    var userInput = prompt("Escribe tus numeros separados con comas")
-    var remplazable = prompt("Que numero sera reemplazado?")
-    var remplazo = prompt("Que numero lo reemplazara?")
+    let userInput = prompt("Escribe tus numeros separados con comas")
+    let userRemplazable = prompt("Que numero sera reemplazado?")
+    let userRemplazo = prompt("Que numero lo reemplazara?")
 
-    var pilaRemplazable = userInput.split(",").map(function(item){
+    let pilaRemplazable = userInput.split(",").map(function(item){
         return parseInt(item, 10)
     })
 
-    document.write(2 + pilaRemplazable[1])
+    let remplazable = parseInt(userRemplazable)
+    let remplazo = parseInt(userRemplazo)
 
-//     i = pilaRemplazable.length
+    i = pilaRemplazable.length
 
-//     while (i > 0){
-//         if(pilaRemplazable[i] == remplazable){
-//             pilaRemplazable[i] = remplazo
-//         }else{
-//             i - 1
-//         }
-//         break
-//     }
-//     j = pilaRemplazable.length + i
+    while (i > 0){
+        if(pilaRemplazable[i] == remplazable){
+            pilaRemplazable[i] = remplazo
+            break
+        }else{
+            i -= 1
+        }
+    }
+    j = pilaRemplazable.length + i
 
-//     document.write(pilaRemplazable)
-// }
+    document.write(pilaRemplazable)
 }
+
 Reemplazar()
