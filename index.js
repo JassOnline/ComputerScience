@@ -26,17 +26,25 @@ function Reemplazar(){
     let remplazable = parseInt(userRemplazable)
     let remplazo = parseInt(userRemplazo)
 
+
+    console.log("antes " + pilaRemplazable)
+    //aqui se remplaza el elemento más nuevo por el que dijo el usuario
     i = pilaRemplazable.length
 
-    while (i > 0){
+    while (i > -1){
         if(pilaRemplazable[i] == remplazable){
             pilaRemplazable[i] = remplazo
             break
-        }else{
-            i -= 1
         }
+         i -= 1
+        
     }
-    j = pilaRemplazable.length + i
+    console.log("despues " + pilaRemplazable)
+    //borramos todos los elementos nuevos hasta llegar al remplazado
+    
+    for(var j = (pilaRemplazable.length - i)-1; j--;){
+        pilaRemplazable.pop()
+    }
 
     document.write(pilaRemplazable)
 }
