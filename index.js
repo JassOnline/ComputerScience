@@ -1,66 +1,43 @@
-class Stack {
-    constructor(){
-        this.data = [];
-        this.top = 0;
-    }
-    push(element) {
-      this.data[this.top] = element;
-      this.top = this.top + 1;
-    }
-   length() {
-      return this.top;
-   }
-   peek() {
-      return this.data[this.top-1];
-   }
-   isEmpty() {
-     return this.top === 0;
-   }
-   pop() {
-    if( this.isEmpty() === false ) {
-       this.top = this.top -1;
-       return this.data.pop(); // removes the last element
-     }
-   }
-   print() {
-      var top = this.top - 1; // because top points to index where new    element to be inserted
-      while(top >= 0) { // print upto 0th index
-         console.log(this.data[top]);
-         top--;
-       }
-    }
-    reverse() {
-       this._reverse(this.top - 1 );
-    }
-    _reverse(index) {
-       if(index != 0) {
-          this._reverse(index-1);
-       }
-       console.log(this.data[index]);
-    }
+// function Pila(){
+//     var inputPila = prompt("Escribe tus valores separados con comas")
+
+//     var retorno = prompt("Cuantos valores se retornaran?")
+
+//     var pila = inputPila.split(",", retorno)
+
+//     if(pila.length >= retorno){
+//     document.write(pila)
+//     }else{
+//     document.write("No es posible traer mas datos de los que hay")
+//     }
+// }
+
+// Pila()
+
+function Reemplazar(){
+    var userInput = prompt("Escribe tus numeros separados con comas")
+    var remplazable = prompt("Que numero sera reemplazado?")
+    var remplazo = prompt("Que numero lo reemplazara?")
+
+    var pilaRemplazable = userInput.split(",").map(function(item){
+        return parseInt(item, 10)
+    })
+
+    document.write(2 + pilaRemplazable[1])
+
+//     i = pilaRemplazable.length
+
+//     while (i > 0){
+//         if(pilaRemplazable[i] == remplazable){
+//             pilaRemplazable[i] = remplazo
+//         }else{
+//             i - 1
+//         }
+//         break
+//     }
+//     j = pilaRemplazable.length + i
+
+//     document.write(pilaRemplazable)
+// }
 }
-
-console.log("Creating Stack");
-let stack = new Stack();
-
-console.log("\n-------\nStack isEmpty = ", stack.isEmpty());
-
-console.log("Adding 1, 2, 3 to the stack");
-stack.push(1);
-stack.push(2);
-stack.push(3);
-
-// console.log("\n-------\nStack = ", this.data[top]);
-
-
-console.log("\n-------\nStack isEmpty = ", stack.isEmpty());
-
-console.log("\n-------\nStack Length = ", stack.length());
-
-console.log("\n-------\nStack Peek Element = ", stack.peek());
-
-console.log("\n-------\nStack Pop =", stack.pop());
-console.log("\n-------\nStack Pop = ", stack.pop());
-console.log("\n-------\nStack Pop =", stack.pop());
-
-console.log("\n-------\nStack isEmpty = ", stack.isEmpty());
+Reemplazar()
