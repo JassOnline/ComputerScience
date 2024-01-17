@@ -74,6 +74,8 @@ function Contenedores(){
     let contenedores = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     i = contenedores.length
 
+    console.log(i + " length")
+
     let userContenedor = prompt("Escriba el numero del contenedor que desea retirar")
     let contenedorRetirar = parseInt(userContenedor)
   
@@ -81,12 +83,36 @@ function Contenedores(){
 
     console.log(contenedores)
     console.log(pilaTemporal)
+    console.log(contenedores)
+    document.write("Pila original: " +  contenedores)
 
-    while (contenedores[i] != contenedorRetirar){
-        pilaTemporal.push(contenedores[i])
-        contenedores.pop()
-        break
-    } i --
+    while (i > -1){
+        console.log(contenedores[i])
+        if (contenedores[i] == contenedorRetirar){
+            console.log("igualdad")
+            break
+        }
+        i -=1
+    }
+
+    j = contenedores.length - i
+    console.log("j: " + j)
+
+    while(j > 0){
+        pilaTemporal.push(contenedores.pop())
+        j--
+    }
+
+    pilaTemporal.pop()
+    console.log(pilaTemporal + " pila temporal")
+
+    j = pilaTemporal.length
+    console.log("j: " + j)
+
+    while(j > 0){
+        contenedores.push(pilaTemporal.pop())
+        j--
+    }
 
     // for (i; i =! contenedorRetirar; i-- ){
     //     pilaTemporal.push(contenedores[i])
@@ -96,7 +122,24 @@ function Contenedores(){
     console.log(i + " length")
     console.log(pilaTemporal + " datos removidos para sacar el deseado")
     console.log(contenedorRetirar + " contenedor retirado")
-    console.log(contenedores + " lista actual de contenedores")
+    console.log(contenedores + " contenedores")
+    document.write("<br>Contenedor a retirar: " +  contenedorRetirar)
+    document.write("<br>Pila reacomodada: " +  contenedores)
 }
 
 Contenedores()
+
+/*
+    while (i > -1)
+    {
+        if (contenedores[i] == contenedorRetirar){
+            console.log("break")
+            break
+        } else {
+            pilaTemporal.push(contenedores[i - 1])
+            contenedores.pop()
+            console.log(contenedores[i])
+            i --
+        }
+}
+*/
